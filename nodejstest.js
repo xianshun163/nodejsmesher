@@ -21,7 +21,7 @@ router.get('/consumer', function (req, res, next) {
     var options = {                           
        host: '127.0.0.1',                     
        port: '30101',                          
-       path: 'http://' + name + ':' + port + '/'                    
+       path: 'http://' + name + ':' + port + '/available'                    
     };                                        
                                               
     // 处理响应的回调函数                     
@@ -54,6 +54,11 @@ router.get('/consumer', function (req, res, next) {
 router.get('/', function (req, res) {
    console.log("get home ");  
    res.send('Hello nodejs');         
+})  
+//  主页输出 "Hello World"        
+router.get('/available', function (req, res) {
+   console.log("get home ");  
+   res.send('nodejs is ok');         
 })  
 
 router.get('/consumer2', function (req, res, next) {         
